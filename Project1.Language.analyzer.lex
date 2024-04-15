@@ -21,7 +21,15 @@ WhiteSpace	({LineTerminator}|[ \t\f])
  
 /*****  Add your rules for recognizing ac tokens here.  I have given you one for skipping whitespace.  */
 Whitespace+		{ /* delete blanks */ }
-
+f	{ return(FLTDCL); }
+i	{ return(INTDCL); }
+p	{ return(PRINT); }
+[a-eghj-oq-z]	{ return(ID); }
+([0-9]+)	{ return(INUM) }
+([0-9]+"."[0-9]+)	{ return(FNUM); }
+"="		{ return(ASSIGN); }
+"+"		{ return(PLUS); }
+"-"		{ return(MINUS); }
 
 
 %%

@@ -33,3 +33,10 @@ C:\Users\lebla\Documents\GitHub\Project-1\bin\Debug\Project1.pdb
 C:\Users\lebla\Documents\GitHub\Project-1\obj\Debug\project1.csprojResolveAssemblyReference.cache
 C:\Users\lebla\Documents\GitHub\Project-1\obj\Debug\Project1.exe
 C:\Users\lebla\Documents\GitHub\Project-1\obj\Debug\Project1.pdb
+C:\Users\Elija\source\repos\seattle-university-cpsc-5400\Project-1-ElijahP7\obj\Debug\project1.csproj.AssemblyReference.cache
+C:\Users\Elija\source\repos\seattle-university-cpsc-5400\Project-1-ElijahP7\obj\Debug\project1.csproj.CoreCompileInputs.cache
+C:\Users\Elija\source\repos\seattle-university-cpsc-5400\Project-1-ElijahP7\obj\Debug\Project1.exe
+C:\Users\Elija\source\repos\seattle-university-cpsc-5400\Project-1-ElijahP7\obj\Debug\Project1.pdb
+C:\Users\Elija\source\repos\seattle-university-cpsc-5400\Project-1-ElijahP7\bin\Debug\Project1.exe.config
+C:\Users\Elija\source\repos\seattle-university-cpsc-5400\Project-1-ElijahP7\bin\Debug\Project1.exe
+C:\Users\Elija\source\repos\seattle-university-cpsc-5400\Project-1-ElijahP7\bin\Debug\Project1.pdb

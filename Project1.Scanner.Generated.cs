@@ -5,10 +5,10 @@
 //  See accompanying file GPLEXcopyright.rtf.
 //
 //  GPLEX Version:  1.2.2
-//  Machine:  RJL-SURFACE4
-//  DateTime: 4/13/2019 9:09:30 AM
-//  UserName: lebla
-//  GPLEX input file <Project1.Language.analyzer.lex - 4/13/2019 9:09:25 AM>
+//  Machine:  DESKTOP-62TPEV2
+//  DateTime: 4/15/2024 11:57:53 AM
+//  UserName: Elijah
+//  GPLEX input file <Project1.Language.analyzer.lex - 4/15/2024 11:53:38 AM>
 //  GPLEX frame file <embedded resource>
 //
 //  Option settings: verbose, noParser, stack, minimize
@@ -20,6 +20,7 @@
 // Version 1.2.1 of 24-June-2013
 //
 //
+#define BACKUP
 #define STACK
 #define STANDALONE
 #define PERSIST
@@ -127,8 +128,8 @@ namespace Project1
         
         enum Result {accept, noMatch, contextFound};
 
-        const int maxAccept = 1;
-        const int initial = 2;
+        const int maxAccept = 10;
+        const int initial = 11;
         const int eofNum = 0;
         const int goStart = -1;
         const int INITIAL = 0;
@@ -170,32 +171,53 @@ public const int EOF = 0, FLTDCL = 1, INTDCL = 2, PRINT = 3, ASSIGN = 4, PLUS = 
         }
     };
 
-    static int[] startState = new int[] {2, 0};
+    static int[] startState = new int[] {11, 0};
 
-    static Table[] NxS = new Table[12] {
+    static Table[] NxS = new Table[22] {
 /* NxS[   0] */ new Table(0, 0, 0, null), // Shortest string ""
-/* NxS[   1] */ // Shortest string "Whitespace"
-      new Table(101, 1, -1, new sbyte[] {1}),
-/* NxS[   2] */ // Shortest string ""
-      new Table(87, 1, -1, new sbyte[] {3}),
-/* NxS[   3] */ // Shortest string "W"
-      new Table(104, 1, -1, new sbyte[] {4}),
-/* NxS[   4] */ // Shortest string "Wh"
-      new Table(105, 1, -1, new sbyte[] {5}),
-/* NxS[   5] */ // Shortest string "Whi"
-      new Table(116, 1, -1, new sbyte[] {6}),
-/* NxS[   6] */ // Shortest string "Whit"
-      new Table(101, 1, -1, new sbyte[] {7}),
-/* NxS[   7] */ // Shortest string "White"
-      new Table(115, 1, -1, new sbyte[] {8}),
-/* NxS[   8] */ // Shortest string "Whites"
-      new Table(112, 1, -1, new sbyte[] {9}),
-/* NxS[   9] */ // Shortest string "Whitesp"
-      new Table(97, 1, -1, new sbyte[] {10}),
-/* NxS[  10] */ // Shortest string "Whitespa"
-      new Table(99, 1, -1, new sbyte[] {11}),
-/* NxS[  11] */ // Shortest string "Whitespac"
-      new Table(101, 1, -1, new sbyte[] {1}),
+/* NxS[   1] */ new Table(0, 0, -1, null), // Shortest string "+"
+/* NxS[   2] */ new Table(0, 0, -1, null), // Shortest string "-"
+/* NxS[   3] */ // Shortest string "0"
+      new Table(46, 12, -1, new sbyte[] {21, -1, 3, 3, 3, 3, 
+          3, 3, 3, 3, 3, 3}),
+/* NxS[   4] */ new Table(0, 0, -1, null), // Shortest string "="
+/* NxS[   5] */ new Table(0, 0, -1, null), // Shortest string "a"
+/* NxS[   6] */ new Table(0, 0, -1, null), // Shortest string "f"
+/* NxS[   7] */ new Table(0, 0, -1, null), // Shortest string "i"
+/* NxS[   8] */ new Table(0, 0, -1, null), // Shortest string "p"
+/* NxS[   9] */ // Shortest string "Whitespace"
+      new Table(101, 1, -1, new sbyte[] {9}),
+/* NxS[  10] */ // Shortest string "0.0"
+      new Table(48, 10, -1, new sbyte[] {10, 10, 10, 10, 10, 10, 
+          10, 10, 10, 10}),
+/* NxS[  11] */ // Shortest string ""
+      new Table(43, 80, -1, new sbyte[] {1, -1, 2, -1, -1, 3, 
+          3, 3, 3, 3, 3, 3, 3, 3, 3, -1, -1, -1, 4, -1, -1, -1, 
+          -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
+          -1, -1, -1, -1, -1, -1, 12, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
+          5, 5, 5, 5, 5, 6, 5, 5, 7, 5, 5, 5, 5, 5, 5, 8, 
+          5, 5, 5, 5, 5, 5, 5, 5, 5, 5}),
+/* NxS[  12] */ // Shortest string "W"
+      new Table(104, 1, -1, new sbyte[] {13}),
+/* NxS[  13] */ // Shortest string "Wh"
+      new Table(105, 1, -1, new sbyte[] {14}),
+/* NxS[  14] */ // Shortest string "Whi"
+      new Table(116, 1, -1, new sbyte[] {15}),
+/* NxS[  15] */ // Shortest string "Whit"
+      new Table(101, 1, -1, new sbyte[] {16}),
+/* NxS[  16] */ // Shortest string "White"
+      new Table(115, 1, -1, new sbyte[] {17}),
+/* NxS[  17] */ // Shortest string "Whites"
+      new Table(112, 1, -1, new sbyte[] {18}),
+/* NxS[  18] */ // Shortest string "Whitesp"
+      new Table(97, 1, -1, new sbyte[] {19}),
+/* NxS[  19] */ // Shortest string "Whitespa"
+      new Table(99, 1, -1, new sbyte[] {20}),
+/* NxS[  20] */ // Shortest string "Whitespac"
+      new Table(101, 1, -1, new sbyte[] {9}),
+/* NxS[  21] */ // Shortest string "0."
+      new Table(48, 10, -1, new sbyte[] {10, 10, 10, 10, 10, 10, 
+          10, 10, 10, 10}),
     };
 
 int NextState() {
@@ -623,8 +645,35 @@ int NextState() {
             if (yywrap())
                 return (int)Token.EOF;
             break;
-        case 1: // Recognized 'Whitespace+',	Shortest string "Whitespace"
+        case 1: // Recognized '"+"',	Shortest string "+"
+return(PLUS);
+            break;
+        case 2: // Recognized '"-"',	Shortest string "-"
+return(MINUS);
+            break;
+        case 3: // Recognized '([0-9]+)',	Shortest string "0"
+return (INUM);
+            break;
+        case 4: // Recognized '"="',	Shortest string "="
+return(ASSIGN);
+            break;
+        case 5: // Recognized '[a-eghj-oq-z]',	Shortest string "a"
+return(ID);
+            break;
+        case 6: // Recognized 'f',	Shortest string "f"
+return(FLTDCL);
+            break;
+        case 7: // Recognized 'i',	Shortest string "i"
+return(INTDCL);
+            break;
+        case 8: // Recognized 'p',	Shortest string "p"
+return(PRINT);
+            break;
+        case 9: // Recognized 'Whitespace+',	Shortest string "Whitespace"
 /* delete blanks */
+            break;
+        case 10: // Recognized '([0-9]+"."[0-9]+)',	Shortest string "0.0"
+return(FNUM);
             break;
         default:
             break;
